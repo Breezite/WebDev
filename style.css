@@ -1,0 +1,73 @@
+#Contact{
+    display: flex;
+    justify-content: end;
+    background: linear-gradient(to bottom, #4f3c3d, #B32428);
+    height: 50px
+}
+#Contact a{
+    padding: 5px;
+    padding-top: 10px;
+}
+
+#Contact a img{
+    width: 30px;
+    border-radius: 50%;
+    filter: grayscale(100%)
+}
+#anomaly{
+    width:10px
+}
+
+#Contact a img:hover{
+    filter: grayscale(0%)
+}
+
+#upcoming{
+    padding:0px;
+    margin:0px;
+    padding-top:10px;
+    height: 80px;
+    background-color: #403A3A;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#upcoming div{
+    padding-right: 30px
+}
+#upcoming p{   
+    padding: 0px;
+    margin: 0px; 
+    word-spacing: 30px;
+}
+#event h1{
+    margin:0px
+}
+#event p{
+    word-spacing:0px;
+}
+#timer{
+    display: flex;
+    justify-content: center;
+
+    letter-spacing:10px
+}
+
+nav{
+    background-color: lightgray;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    padding-right: 20px;
+}
