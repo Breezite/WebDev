@@ -1,6 +1,6 @@
 async function loadFighters(){
     try{
-        const response = await fetch('/api/figthers')
+        const response = await fetch('/api/fighters')
         const data = await response.json()
 
         const table = document.getElementById('fightersTable')
