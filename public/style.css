@@ -116,3 +116,9 @@ nav a{
 .dropdown{
     position: relative
 }
+
+.fightersTable{
+    column-span: 3;
+    text-align: center;
+    color: red;
+}
