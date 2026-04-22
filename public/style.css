@@ -117,8 +117,6 @@ nav a{
     position: relative
 }
 
-.fightersTable{
-    column-span: 3;
+.tablesContainer p{
     text-align: center;
-    color: red;
 }
