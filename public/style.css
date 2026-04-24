@@ -1,3 +1,6 @@
+body{
+    margin:0;
+}
 #Contact{
     display: flex;
     justify-content: end;
@@ -121,12 +124,13 @@ nav a{
     display: flex;
     margin-bottom: 20px;    
     padding: 0 20px;
+    background-color: lightgray;
 }
 #top h1{
     margin: 20px;
 }
 #selectCat{
-    display: flex !important;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
@@ -138,10 +142,9 @@ nav a{
     height: 30px;
     background-color: #e20e15;
     color: white;
-
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    white-space: nowrap;
 }
-
-.tablesContainer p{
-    text-align: center;
+#tablesContainer{
+    padding-left: 20px;
 }

@@ -50,9 +50,27 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            
-        </main>
+
+
+        <h1>Application</h1>
+
+        <form>
+            <label for="fullName">Full Name:</label><input type="text" name="fullName"><br>
+            <label for="dob">Date of Birth:</label><input type="date" name="dob"><br>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="" disabled selected>Select a category</option>
+                <option value="IFC">I.F.C.</option>
+                <option value="KARATE_COMBAT">Karate Combat</option>
+                <option value="KICKBACK">Kickback</option>
+                <option value="KUMITE">Kumite</option>
+                <option value="PIT_SUBMISSION">Pit Submission</option>
+            </select><br>
+
+            <input type="checkbox" id="safety" name="safety"><label for="safety" name="safety">Health and Safety Liability <a href="Liability Waiver.pdf" download>Form</a></label><br>
+            <input type="checkbox" id="tc" name="tc"><label for="tc" name="tc">I accept the terms and conditions</label><br>
+
+        </form>
     </body>
     <footer>
 
