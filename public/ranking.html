@@ -5,19 +5,64 @@
         <title>Karate Rankings</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
+        <script src="timer.js" defer></script>
     </head>
     <body>
+        <header>
+            <div id="Contact">  <a><img src="Facebook.png"></a>
+                                <a><img src="Instagram.png"></a>
+                                <a><img src="Youtube.avif"></a>
+                                <a><img src="X.jpg"></a>
+            </div>
+            <div id="upcoming">
+                <div>
+                    <div id="timer"></div>
+                    <p>Days Hours Minutes Seconds</p>
+                </div>
+                <div id="event">
+                    <h1>2026 June National Championship</h1>
+                    <p>Hosted in Malta</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown"><a>Ranking</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ranking.html?category=IFC">I.F.C.</a></li>
+                            <li><a href="ranking.html?category=KARATE COMBAT">Karate Combat</a></li>
+                            <li><a href="ranking.html?category=KICKBACK">Kickback</a></li>
+                            <li><a href="ranking.html?category=KUMITE">Kumite</a></li>
+                            <li><a href="ranking.html?category=PIT SUBMISSION">Pit Submission</a></li>                            
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="league.html">Leaugue</a>  
+                        <ul class="dropdown-menu">
+                            <li><a href="standings">Standings</a>
+                            <li><a href="teams">Teams</a></li>
+                            <li><a href="fixtures">Fixtures</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="olympics.html">Olympics</a></li>
+                    <li><a href="regulations.html">Regulations</a></li>
+                    <li><a href="approved.html">Approved</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <h1>Karate Fighter Rankings</h1>
+        <div id="top">
+            <h1>Karate Athlete Rankings</h1>
 
-        <div>
-            <button onclick="filterFighters('KARATE COMBAT')">KARATE COMBAT</button>
-            <button onclick="filterFighters('KICKBACK')">KICKBACK</button>
-            <button onclick="filterFighters('PIT SUBMISSION')">PIT SUBMISSION</button>
-            <button onclick="filterFighters('IFC')">IFC</button>
-            <button onclick="filterFighters('KUMITE')">KUMITE</button>
+            <div id="selectCat">
+                <button onclick="filterFighters('IFC')">IFC</button>
+                <button onclick="filterFighters('KARATE COMBAT')">KARATE COMBAT</button>
+                <button onclick="filterFighters('KICKBACK')">KICKBACK</button>
+                <button onclick="filterFighters('KUMITE')">KUMITE</button>
+                <button onclick="filterFighters('PIT SUBMISSION')">PIT SUBMISSION</button>
+            </div>
         </div>
-        
+
         <div id="tablesContainer"></div>
        
     </body>

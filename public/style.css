@@ -79,7 +79,7 @@ nav a{
     background: #102C54;
     list-style: none;
     padding: 10px 0;
-    max-width: 90px;
+    max-width: 140px;
     left: 0%;
 
     opacity: 0;
@@ -115,6 +115,31 @@ nav a{
 }
 .dropdown{
     position: relative
+}
+
+#top{
+    display: flex;
+    margin-bottom: 20px;    
+    padding: 0 20px;
+}
+#top h1{
+    margin: 20px;
+}
+#selectCat{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding-left: 5rem;
+}
+#selectCat button{
+    border-radius:12px;
+    gap: 20px;
+    height: 30px;
+    background-color: #e20e15;
+    color: white;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .tablesContainer p{

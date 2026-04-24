@@ -7,11 +7,15 @@ async function loadFighters(){
     try {
         const response = await fetch('/api/fighters');
         const data = await response.json();
+
+        allFighters = data.items;
+
+        const cat = new URLSearchParams(window.location.search);
+        const category = cat.get('category');
+
+        filterFighters(category);   
         
-        allFighters = data.items; 
-        
-        filterFighters('KARATE COMBAT'); 
-        
+
     } catch (error) {
         console.log(error);
         container.innerHTML = '<p>Error loading athletes.</p>';
