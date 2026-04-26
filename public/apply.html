@@ -6,6 +6,7 @@
         <title>National Karate Federation</title>
         <link rel="stylesheet" href="style.css">
         <script src="timer.js" defer></script>
+        <script src="checks.js" defer></script>
     </head>
     <body>
         <header>
@@ -37,7 +38,7 @@
                             <li><a href="ranking.html?category=PIT SUBMISSION">Pit Submission</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="league.html">Competitions</a>  
+                    <li class="dropdown"><a>Competitions</a>  
                         <ul class="dropdown-menu">
                             <li><a href="apply.html">Apply</a></li>
                             <li><a href="fixtures">Fixtures</a></li>
@@ -51,26 +52,52 @@
             </nav>
         </header>
 
+        <div id="titleA">
+            <img src="logo.jpeg">
+            <p>Competition Application</p>
+        </div>
+        
+        <h2 id="strip">Online Registration</h2>
 
-        <h1>Application</h1>
+        <form>            
+            <div id="row">
+                <div id="group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" required name="firstName">
+                </div>
+                <div id="group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" required name="lastName">
+                </div>
+            </diV>
+            
+            <div id="group"><label for="dob">Date of Birth:</label><input type="date" required name="dob"></div>
+            
 
-        <form>
-            <label for="fullName">Full Name:</label><input type="text" name="fullName"><br>
-            <label for="dob">Date of Birth:</label><input type="date" name="dob"><br>
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-                <option value="" disabled selected>Select a category</option>
-                <option value="IFC">I.F.C.</option>
-                <option value="KARATE_COMBAT">Karate Combat</option>
-                <option value="KICKBACK">Kickback</option>
-                <option value="KUMITE">Kumite</option>
-                <option value="PIT_SUBMISSION">Pit Submission</option>
-            </select><br>
+            <div id="group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="IFC">I.F.C.</option>
+                    <option value="KARATE_COMBAT">Karate Combat</option>
+                    <option value="KICKBACK">Kickback</option>
+                    <option value="KUMITE">Kumite</option>
+                    <option value="PIT_SUBMISSION">Pit Submission</option>
+                </select>
+            </div>
 
-            <input type="checkbox" id="safety" name="safety"><label for="safety" name="safety">Health and Safety Liability <a href="Liability Waiver.pdf" download>Form</a></label><br>
-            <input type="checkbox" id="tc" name="tc"><label for="tc" name="tc">I accept the terms and conditions</label><br>
-
+            <div id="group"><label for="phone">Phone Number:</label><input type="tel" required name="phone"></div>
+            <div id="group"><label for="email">Email Address:</label><input type="email" required name="email"></div>
+            <br><br>
+            <label></label><input type="checkbox" required id="safety" name="safety"><label for="safety" name="safety">Health and Safety Liability <a href="Liability Waiver.pdf" download>Form</a></label><br>
+            <label></label><input type="checkbox" required id="tc" name="tc"><label for="tc" name="tc">I accept the terms and conditions</label><br>
+            
+            <div id="submitContainer">
+                <div id="error"></div>
+                <button type="submit" id="submit">Submit Application</button>
+            </div>
         </form>
+        
     </body>
     <footer>
 
