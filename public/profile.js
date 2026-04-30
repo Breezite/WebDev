@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 function saveProfile(event){
     event.preventDefault();
 
+    const checkedCat=Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb =>cb.value);
     const user = {
         name: document.getElementById('name').value,
         surname: document.getElementById('surname').value,
@@ -20,7 +21,7 @@ function saveProfile(event){
         height: document.getElementById('height').value,
         nationality: document.getElementById('nationality').value,
         gender: document.getElementById('gender').value,
-        category: document.getElementById('category').value,
+        category: checkedCat.join(', '),
         grade: document.getElementById('grade').value,
     };
     
@@ -68,7 +69,17 @@ function showForm(){
         if (document.getElementById('height')) document.getElementById('height').value = user.height || '';
         if (document.getElementById('nationality')) document.getElementById('nationality').value = user.nationality || '';
         if (document.getElementById('gender')) document.getElementById('gender').value = user.gender || '';
-        if (document.getElementById('category')) document.getElementById('category').value = user.category || '';
+
+        document.querySelectorAll('input[name="categpry"]').forEach(cb => cb.value =false);
+        if(user.category){
+            const savedCats =user.category.split(', ');
+            document.querySelectorAll('input[name="category"]').forEach(cb=>{
+                if(savedCats.includes(cb.value)){
+                    cb.checked=true;
+                }
+            });
+        }
+
         if (document.getElementById('grade')) document.getElementById('grade').value = user.grade || '';
     }
     displayView.style.display='none';

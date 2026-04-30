@@ -56,10 +56,11 @@
         
 
         <div id="profileDisplay">
-            <p>Enter your details below:</p><br>
+            <div id="fullName">
+                <span id="dispName"></span>
+                <span id="dispSurname"></span>
+            </div>
 
-            <p><strong>Name:</strong> <span id="dispName"></span></p>
-            <p><strong>Surname:</strong> <span id="dispSurname"></span></p>
             <p><strong>Weight (kg):</strong> <span id="dispWeight"></span></p>
             <p><strong>Height (cm):</strong> <span id="dispHeight"></span></p>
             <p><strong>Nationality:</strong> <span id="dispNationality"></span></p>
@@ -71,6 +72,8 @@
         </div>
 
         <form id="profileForm">
+            <p>Enter your details below:</p><br>
+
             <div id="group">
                 <label for="name">Name:</label>
                 <input type="text" required id="name">
@@ -100,22 +103,21 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-            <div id="group">
+            <div id="checkboxGroup">
                 <label for="category">Category:</label>
-                <select required id="category" name="category" required>
-                    <option value="" disabled selected>Select a category</option>
-                    <option value="IFC">I.F.C.</option>
-                    <option value="KARATE_COMBAT">Karate Combat</option>
-                    <option value="KICKBACK">Kickback</option>
-                    <option value="KUMITE">Kumite</option>
-                    <option value="PIT_SUBMISSION">Pit Submission</option>
-                </select>
+                <div id="checkedCat">
+                    <label><input type="checkbox" name="category" value="IFC">I.F.C.</label>
+                    <label><input type="checkbox" name="category" value="KARATE COMBAT">Karate Combat</label>
+                    <label><input type="checkbox" name="category" value="KICKBACK">Kickback</label>
+                    <label><input type="checkbox" name="category" value="KUMITE">Kumite</label>
+                    <label><input type="checkbox" name="category" value="PIT SUBMISSION">Pit Submission</label>
+                </div>
             </div>
             <div id="group">
                 <label for="grade">Current grade:</label>
                 <input type="text" required id="grade">
             </div>
-
+            <br>
             <div>
                 <button type="submit" id="save">Save Profile</button>
             </div>
@@ -125,7 +127,7 @@
     <footer>
         <p><strong>National Karate Federation</strong></p>
         <p>Mosta, Malta</p>
-        <p>Contact: info@maltakarate.com | +356 1234 5678</p>
+        <p>Contact: info@maltakaratefederation.com | +356 1234 5678</p>
         <p>&copy; 2026 National Karate Federation. All Rights (Not) Reserved.</p>
     </footer>
 </html>
