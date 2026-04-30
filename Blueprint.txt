@@ -15,3 +15,11 @@ About mtta
 
 API to get athlete info.
 Needs GET, POST and delete
+
+
+To be done:
+Loading API errors
+Local Storage
+Mobile view
+Responsive navigation
+Media query

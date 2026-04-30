@@ -54,8 +54,78 @@
 
         <h1>My Profile</h1>
         
-        </body>
-    <footer>
 
+        <div id="profileDisplay">
+            <p>Enter your details below:</p><br>
+
+            <p><strong>Name:</strong> <span id="dispName"></span></p>
+            <p><strong>Surname:</strong> <span id="dispSurname"></span></p>
+            <p><strong>Weight (kg):</strong> <span id="dispWeight"></span></p>
+            <p><strong>Height (cm):</strong> <span id="dispHeight"></span></p>
+            <p><strong>Nationality:</strong> <span id="dispNationality"></span></p>
+            <p><strong>Gender:</strong> <span id="dispGender"></span></p>
+            <p><strong>Category:</strong> <span id="dispCategory"></span></p>
+            <p><strong>Current Grade:</strong> <span id="dispGrade"></span></p>
+
+            <button id="editBtn">Edit Profile</button>
+        </div>
+
+        <form id="profileForm">
+            <div id="group">
+                <label for="name">Name:</label>
+                <input type="text" required id="name">
+            </div>
+            <div id="group">
+                <label for="surname">Surname:</label>
+                <input type="text" required id="surname">
+            </div>
+            <div id="group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" required id="weight">
+            </div>
+            <div id="group">
+                <label for="height">Height (m):</label>
+                <input type="number" required id="height">
+            </div>
+            <div id="group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" required id="nationality">
+            </div>
+            <div id="group">
+                <label for="gender">Gender:</label>
+                <select required id="gender">
+                    <option value="" disabled selected>Select</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div id="group">
+                <label for="category">Category:</label>
+                <select required id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="IFC">I.F.C.</option>
+                    <option value="KARATE_COMBAT">Karate Combat</option>
+                    <option value="KICKBACK">Kickback</option>
+                    <option value="KUMITE">Kumite</option>
+                    <option value="PIT_SUBMISSION">Pit Submission</option>
+                </select>
+            </div>
+            <div id="group">
+                <label for="grade">Current grade:</label>
+                <input type="text" required id="grade">
+            </div>
+
+            <div>
+                <button type="submit" id="save">Save Profile</button>
+            </div>
+
+        </form>
+    </body>
+    <footer>
+        <p><strong>National Karate Federation</strong></p>
+        <p>Mosta, Malta</p>
+        <p>Contact: info@maltakarate.com | +356 1234 5678</p>
+        <p>&copy; 2026 National Karate Federation. All Rights (Not) Reserved.</p>
     </footer>
 </html>

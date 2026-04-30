@@ -226,3 +226,20 @@ form label{
 #submit:hover{
     background-color:#FDED95;
 }
+
+
+#profileDisplay{
+    display:none;
+}
+#editBtn{
+    cursor:pointer;
+}
+#editBtn:hover{
+    background-color: #354D73;
+}
+#save{
+    cursor: pointer;
+}
+#save:hover{
+    background-color: #354D73;
+}
