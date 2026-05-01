@@ -56,20 +56,28 @@
         
 
         <div id="profileDisplay">
-            <div id="fullName">
-                <span id="dispName"></span>
-                <span id="dispSurname"></span>
+            <div id="left">
+                <div id="fullName">
+                    <span id="dispName"></span>
+                    <span id="dispSurname"></span>
+                </div>
+                <p><strong>Gender:</strong> <span id="dispGender"></span></p>
+                <p><strong>Nationality:</strong> <span id="dispNationality"></span></p>
+                <div>
+                    <p><strong>Weight (kg):</strong> <span id="dispWeight"></span></p>
+                    <p><strong>Height (cm):</strong> <span id="dispHeight"></span></p>
+                </div>
+                
+                <p><strong>Category:</strong> <span id="dispCategory"></span></p>
+                <p><strong>Current Grade:</strong> <span id="dispGrade"></span></p>
             </div>
-
-            <p><strong>Weight (kg):</strong> <span id="dispWeight"></span></p>
-            <p><strong>Height (cm):</strong> <span id="dispHeight"></span></p>
-            <p><strong>Nationality:</strong> <span id="dispNationality"></span></p>
-            <p><strong>Gender:</strong> <span id="dispGender"></span></p>
-            <p><strong>Category:</strong> <span id="dispCategory"></span></p>
-            <p><strong>Current Grade:</strong> <span id="dispGrade"></span></p>
-
+            <div id="right">
+                <img id="dispPic">
+            </div>
+            <br>
             <button id="editBtn">Edit Profile</button>
         </div>
+        
 
         <form id="profileForm">
             <p>Enter your details below:</p><br>
@@ -98,9 +106,9 @@
                 <label for="gender">Gender:</label>
                 <select required id="gender">
                     <option value="" disabled selected>Select</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="other">Other</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             <div id="checkboxGroup">
@@ -118,8 +126,14 @@
                 <input type="text" required id="grade">
             </div>
             <br>
+            <div id="group">
+                <label for="pic">Profile picture:</label>
+                <input type="file" id="pic" accept="image/*">
+                <img id="previewPic">
+            </div>
+            <br>
             <div>
-                <button type="submit" id="save">Save Profile</button>
+                <button type="submit" id="saveBtn">Save Profile</button>
             </div>
 
         </form>

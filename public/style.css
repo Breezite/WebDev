@@ -237,6 +237,8 @@ form label{
 }
 #editBtn{
     cursor:pointer;
+    grid-column: 1/-1;
+    justify-self:center;
 }
 #editBtn:hover{
     background-color: #354D73;
@@ -256,4 +258,50 @@ form label{
     display: inline-flex;
     align-items:center;
     cursor:pointer;
+}
+#previewPic{
+    width:200px;
+}
+#dispPic{
+    width:200px;
+}
+#profileDisplay{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+#left{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+#profileImg{
+    width:50px;
+    height:50px;
+}
+#tablesContainer{
+    display: flex;
+    flex-wrap:wrap;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#together{
+    margin: 30px;
+}
+#tablesContainer table{
+    border-collapse: collapse;
+    border:black solid 5px;
+    margin-bottom: 20px;
+
+}
+#tablesContainer table thead{
+    color: #FFFFFF;
+    background-color:  #23282B;
+    font-weight:1000;
+    border-bottom: black solid 6px;
+    text-align: left;
+}
+#tablesContainer table td, th{
+    padding-left:25px;
+    padding-right:25px;
 }

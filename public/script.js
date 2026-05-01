@@ -42,15 +42,19 @@ function filterFighters(selectedCategory) {
 
     for (const weightClass in grouped) {
         const fighterofClass = grouped[weightClass];
+        
+        const together=document.createElement('div');
+        together.id='together';
 
         const title = document.createElement('h2');
         title.textContent = weightClass;
-        container.appendChild(title);
+        together.appendChild(title);
 
         const table = document.createElement('table');
         table.innerHTML = `
             <thead>
                 <tr>
+                    <th>Profile</th>
                     <th>Rank</th>
                     <th>Name</th>
                     <th>Weight</th>
@@ -62,14 +66,18 @@ function filterFighters(selectedCategory) {
 
         fighterofClass.forEach(fighter => {
             const row = document.createElement('tr');
+            const pImg = fighter.bodyImage?.url ? `<img src="${fighter.bodyImage.url}" alt="${fighter.fullName}" id="profileImg">` : '-';
+
             row.innerHTML = `
+                <td id="pImg">${pImg}</td>
                 <td>${fighter.ranking ?? '-'}</td>
                 <td>${fighter.fullName}</td>
                 <td>${fighter.weightClass}</td>
             `;
             tbody.appendChild(row);
         });
-        container.appendChild(table);
+        together.appendChild(table);
+        container.appendChild(together);
     }
 
     if (Object.keys(grouped).length === 0) {

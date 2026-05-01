@@ -10,23 +10,69 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 });
 
+const fileInput = document.getElementById('pic');
+const previewPic = document.getElementById('previewPic');
+   
+if(fileInput && previewPic){
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0]; 
+        
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(e){
+                previewPic.src = e.target.result;
+                previewPic.style.display = 'block'; 
+            };
+            reader.readAsDataURL(file);
+        }
+        else {
+            previewPic.style.display = 'none';
+            previewPic.src = '';
+        }
+    });
+}
+
 function saveProfile(event){
     event.preventDefault();
 
     const checkedCat=Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb =>cb.value);
-    const user = {
-        name: document.getElementById('name').value,
-        surname: document.getElementById('surname').value,
-        weight: document.getElementById('weight').value,
-        height: document.getElementById('height').value,
-        nationality: document.getElementById('nationality').value,
-        gender: document.getElementById('gender').value,
-        category: checkedCat.join(', '),
-        grade: document.getElementById('grade').value,
-    };
-    
-    localStorage.setItem('userProfile', JSON.stringify(user));
-    loadProfile();
+    const file=document.getElementById('pic').files[0];
+    const save=(imageBase64)=>{
+        const user = {
+            name: document.getElementById('name').value,
+            surname: document.getElementById('surname').value,
+            weight: document.getElementById('weight').value,
+            height: document.getElementById('height').value,
+            nationality: document.getElementById('nationality').value,
+            gender: document.getElementById('gender').value,
+            category: checkedCat.join(', '),
+            grade: document.getElementById('grade').value,
+            pic:imageBase64
+        };
+        localStorage.setItem('userProfile', JSON.stringify(user));
+        loadProfile();
+    }
+        
+
+
+    if(file){
+        const reader=new FileReader();
+        reader.onload=function(e){
+            save(e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+    else{
+        const exists=JSON.parse(localStorage.getItem('user'))||{};
+
+        if(exists){
+            const data =JSON.parse(exists);
+            save(data.pic||'');
+        }
+        else{
+            save('');
+        }
+    }
 }
 
 function loadProfile(){
@@ -46,12 +92,22 @@ function loadProfile(){
         if (document.getElementById('dispCategory')) document.getElementById('dispCategory').textContent = user.category || '-';
         if (document.getElementById('dispGrade')) document.getElementById('dispGrade').textContent = user.grade || '-';
 
-        formView.style.display='none';
-        displayView.style.display= 'block';
+        if(document.getElementById('dispPic')){
+            if(user.pic){
+                dispPic.src=user.pic;
+                dispPic.style.display='inline-block';
+            }
+            else{
+                dispPic.style.display='none';
+            }
+        }
+        if(formView) formView.style.display='none';
+        if(displayView) displayView.style.display='grid';
+
     }
     else{
-        formView.style.display='block';
-        displayView.style.display='none';
+        if(formView) formView.style.display='block';
+        if(displayView) displayView.style.display='none';
     }
 }
 
@@ -70,7 +126,7 @@ function showForm(){
         if (document.getElementById('nationality')) document.getElementById('nationality').value = user.nationality || '';
         if (document.getElementById('gender')) document.getElementById('gender').value = user.gender || '';
 
-        document.querySelectorAll('input[name="categpry"]').forEach(cb => cb.value =false);
+        document.querySelectorAll('input[name="category"]').forEach(cb => cb.checked =false);
         if(user.category){
             const savedCats =user.category.split(', ');
             document.querySelectorAll('input[name="category"]').forEach(cb=>{
@@ -81,6 +137,17 @@ function showForm(){
         }
 
         if (document.getElementById('grade')) document.getElementById('grade').value = user.grade || '';
+
+        const previewPic = document.getElementById('previewPic');
+        if(previewPic){
+            if(user.pic){
+                previewPic.src=user.pic;
+                previewPic.style.display='block';
+            }
+            else{
+                previewPic.style.display='none';
+            }
+        }
     }
     displayView.style.display='none';
     formView.style.display='block';
