@@ -97,6 +97,7 @@ nav a{
     padding: 10px 0;
     max-width: 140px;
     left: 0%;
+    z-index:1;
 
     opacity: 0;
     visibility: hidden;
@@ -377,8 +378,16 @@ form label{
     padding: 40px;
 }
 #buttons button{
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8px;
     padding: 20px;
     margin: 10px;
+    background-color: #f7383e;
+    color: white;
+    font-family: inherit;
+    text-align: center;
 }
 #preview{
     display:none;
@@ -391,4 +400,94 @@ form label{
     height: 700px;
     border: none;
     width: 900px;
+}
+
+#brackets{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 900px;
+    padding-left: 200px;
+    padding-right:200px;
+}
+#round{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:150px;
+}
+#round h2{
+    text-align: center;
+}
+.bout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    position: relative;
+    width: 100%;
+}
+.bout p{
+    border-bottom: 2px solid black;
+    height: 20px;
+    background-color: #D3D3D3;
+}
+.bout::after{
+    content:"";
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    width: 50px;
+    border-bottom: 2px solid black;
+}
+.bout.top::before, .bout.bottom::before{
+    content: "";
+    position: absolute;
+    right: -50px;
+    width:2px;
+    background-color: black;
+}
+.bout.top::before{
+    top: 50%;
+    height: 50%;
+}
+.bout.bottom::before{
+    bottom: 50%;
+    height: 50%;
+}
+
+#round:nth-child(1) .bout.top::before { top: 50%; height: 65px; }
+#round:nth-child(1) .bout.bottom::before { bottom: 50%; height: 65px; }
+#round:nth-child(2) .bout.top::before { top: 50%; height: 105px; }
+#round:nth-child(2) .bout.bottom::before { bottom: 50%; height: 105px; }
+#round:nth-child(3) .bout.top::before { top: 50%; height: 210px; }
+#round:nth-child(3) .bout.bottom::before { bottom: 50%; height: 210px; }
+
+
+
+#round:last-child .bout::after, #round:last-child .bout::after{
+    display:none;
+}
+#round:nth-child(2) #bout{
+    margin: 40px 0;
+}
+#round:nth-child(3) #bout {
+    margin: 80px 0;
+}
+#round:nth-child(4) #bout{
+    margin: 160px 0;
+}
+.bouts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    position: relative;
+}
+#round:not(:first-child) .bout p:first-child::before {
+    content: "";
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    width: 80px;
+    border-bottom: 2px solid black;
 }

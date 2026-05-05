@@ -81,7 +81,7 @@ function filterFighters(selectedCategory) {
     }
 
     if (Object.keys(grouped).length === 0) {
-        container.innerHTML = `<p>No athletes found for ${selectedCategory}</p>`;
+        container.innerHTML = `<p>Kindly select a category</p>`;
     } 
 }
 
