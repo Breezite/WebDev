@@ -9,139 +9,140 @@
         <script src="profile.js" defer></script>
     </head>
     <body>
-        <header>
-            <div id="Contact">  <a><img src="Facebook.png"></a>
-                                <a><img src="Instagram.png"></a>
-                                <a><img src="Youtube.avif"></a>
-                                <a><img src="X.jpg"></a>
+        <main>
+            <header>
+                <div id="Contact">  <a><img src="Facebook.png"></a>
+                                    <a><img src="Instagram.png"></a>
+                                    <a><img src="Youtube.avif"></a>
+                                    <a><img src="X.jpg"></a>
+                </div>
+                <div id="upcoming">
+                    <div>
+                        <div id="timer"></div>
+                        <p>Days Hours Minutes Seconds</p>
+                    </div>
+                    <div id="event">
+                        <h1>2026 June National Championship</h1>
+                        <p>Hosted in Malta</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profile.html">My Profile</a></li>
+                        <li class="dropdown"><a>Ranking</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ranking.html?category=IFC">I.F.C.</a></li>
+                                <li><a href="ranking.html?category=KARATE COMBAT">Karate Combat</a></li>
+                                <li><a href="ranking.html?category=KICKBACK">Kickback</a></li>
+                                <li><a href="ranking.html?category=KUMITE">Kumite</a></li>
+                                <li><a href="ranking.html?category=PIT SUBMISSION">Pit Submission</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a>Competitions</a>  
+                            <ul class="dropdown-menu">
+                                <li><a href="apply.html">Apply</a></li>
+                                <li><a href="fixtures">Fixtures</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="regulations.html">Regulations</a></li>
+                        <li><a href="https://karate.com/news">News</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <h1>My Profile</h1>
+            
+
+            <div id="profileDisplay">
+                <div id="left">
+                    <div id="fullName">
+                        <span id="dispName"></span>
+                        <span id="dispSurname"></span>
+                    </div>
+                    <p><strong>Gender:</strong> <span id="dispGender"></span></p>
+                    <p><strong>Nationality:</strong> <span id="dispNationality"></span></p>
+                    <div>
+                        <p><strong>Weight (kg):</strong> <span id="dispWeight"></span></p>
+                        <p><strong>Height (cm):</strong> <span id="dispHeight"></span></p>
+                    </div>
+                    
+                    <p><strong>Category:</strong> <span id="dispCategory"></span></p>
+                    <p><strong>Current Grade:</strong> <span id="dispGrade"></span></p>
+                </div>
+                <div id="right">
+                    <img id="dispPic">
+                </div>
+                <br>
+                <button id="editBtn">Edit Profile</button>
             </div>
-            <div id="upcoming">
+            
+
+            <form id="profileForm">
+                <p>Enter your details below:</p><br>
+
+                <div id="group">
+                    <label for="name">Name:</label>
+                    <input type="text" required id="name">
+                </div>
+                <div id="group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" required id="surname">
+                </div>
+                <div id="group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" required id="weight">
+                </div>
+                <div id="group">
+                    <label for="height">Height (m):</label>
+                    <input type="number" required id="height">
+                </div>
+                <div id="group">
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" required id="nationality">
+                </div>
+                <div id="group">
+                    <label for="gender">Gender:</label>
+                    <select required id="gender">
+                        <option value="" disabled selected>Select</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div id="checkboxGroup">
+                    <label for="category">Category:</label>
+                    <div id="checkedCat">
+                        <label><input type="checkbox" name="category" value="IFC">I.F.C.</label>
+                        <label><input type="checkbox" name="category" value="KARATE COMBAT">Karate Combat</label>
+                        <label><input type="checkbox" name="category" value="KICKBACK">Kickback</label>
+                        <label><input type="checkbox" name="category" value="KUMITE">Kumite</label>
+                        <label><input type="checkbox" name="category" value="PIT SUBMISSION">Pit Submission</label>
+                    </div>
+                </div>
+                <div id="group">
+                    <label for="grade">Current grade:</label>
+                    <input type="text" required id="grade">
+                </div>
+                <br>
+                <div id="group">
+                    <label for="pic">Profile picture:</label>
+                    <input type="file" id="pic" accept="image/*">
+                    <img id="previewPic">
+                </div>
+                <br>
                 <div>
-                    <div id="timer"></div>
-                    <p>Days Hours Minutes Seconds</p>
+                    <button type="submit" id="saveBtn">Save Profile</button>
                 </div>
-                <div id="event">
-                    <h1>2026 June National Championship</h1>
-                    <p>Hosted in Malta</p>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="profile.html">My Profile</a></li>
-                    <li class="dropdown"><a>Ranking</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="ranking.html?category=IFC">I.F.C.</a></li>
-                            <li><a href="ranking.html?category=KARATE COMBAT">Karate Combat</a></li>
-                            <li><a href="ranking.html?category=KICKBACK">Kickback</a></li>
-                            <li><a href="ranking.html?category=KUMITE">Kumite</a></li>
-                            <li><a href="ranking.html?category=PIT SUBMISSION">Pit Submission</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a>Competitions</a>  
-                        <ul class="dropdown-menu">
-                            <li><a href="apply.html">Apply</a></li>
-                            <li><a href="fixtures">Fixtures</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="olympics.html">Olympics</a></li>
-                    <li><a href="regulations.html">Regulations</a></li>
-                    <li><a href="approved.html">Approved</a></li>
-                    <li><a href="news.html">News</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <h1>My Profile</h1>
+            </form>
+        </main>
         
-
-        <div id="profileDisplay">
-            <div id="left">
-                <div id="fullName">
-                    <span id="dispName"></span>
-                    <span id="dispSurname"></span>
-                </div>
-                <p><strong>Gender:</strong> <span id="dispGender"></span></p>
-                <p><strong>Nationality:</strong> <span id="dispNationality"></span></p>
-                <div>
-                    <p><strong>Weight (kg):</strong> <span id="dispWeight"></span></p>
-                    <p><strong>Height (cm):</strong> <span id="dispHeight"></span></p>
-                </div>
-                
-                <p><strong>Category:</strong> <span id="dispCategory"></span></p>
-                <p><strong>Current Grade:</strong> <span id="dispGrade"></span></p>
-            </div>
-            <div id="right">
-                <img id="dispPic">
-            </div>
-            <br>
-            <button id="editBtn">Edit Profile</button>
-        </div>
-        
-
-        <form id="profileForm">
-            <p>Enter your details below:</p><br>
-
-            <div id="group">
-                <label for="name">Name:</label>
-                <input type="text" required id="name">
-            </div>
-            <div id="group">
-                <label for="surname">Surname:</label>
-                <input type="text" required id="surname">
-            </div>
-            <div id="group">
-                <label for="weight">Weight (kg):</label>
-                <input type="number" required id="weight">
-            </div>
-            <div id="group">
-                <label for="height">Height (m):</label>
-                <input type="number" required id="height">
-            </div>
-            <div id="group">
-                <label for="nationality">Nationality:</label>
-                <input type="text" required id="nationality">
-            </div>
-            <div id="group">
-                <label for="gender">Gender:</label>
-                <select required id="gender">
-                    <option value="" disabled selected>Select</option>
-                    <option value="Female">Female</option>
-                    <option value="Male">Male</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div id="checkboxGroup">
-                <label for="category">Category:</label>
-                <div id="checkedCat">
-                    <label><input type="checkbox" name="category" value="IFC">I.F.C.</label>
-                    <label><input type="checkbox" name="category" value="KARATE COMBAT">Karate Combat</label>
-                    <label><input type="checkbox" name="category" value="KICKBACK">Kickback</label>
-                    <label><input type="checkbox" name="category" value="KUMITE">Kumite</label>
-                    <label><input type="checkbox" name="category" value="PIT SUBMISSION">Pit Submission</label>
-                </div>
-            </div>
-            <div id="group">
-                <label for="grade">Current grade:</label>
-                <input type="text" required id="grade">
-            </div>
-            <br>
-            <div id="group">
-                <label for="pic">Profile picture:</label>
-                <input type="file" id="pic" accept="image/*">
-                <img id="previewPic">
-            </div>
-            <br>
-            <div>
-                <button type="submit" id="saveBtn">Save Profile</button>
-            </div>
-
-        </form>
+        <footer>
+            <p><strong>National Karate Federation</strong></p>
+            <p>Mosta, Malta</p>
+            <p>Contact: info@maltakaratefederation.com | +356 1234 5678</p>
+            <p>&copy; 2026 National Karate Federation. All Rights (Not) Reserved.</p>
+        </footer>
     </body>
-    <footer>
-        <p><strong>National Karate Federation</strong></p>
-        <p>Mosta, Malta</p>
-        <p>Contact: info@maltakaratefederation.com | +356 1234 5678</p>
-        <p>&copy; 2026 National Karate Federation. All Rights (Not) Reserved.</p>
-    </footer>
 </html>
