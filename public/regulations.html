@@ -6,6 +6,7 @@
         <title>National Karate Federation</title>
         <link rel="stylesheet" href="style.css">
         <script src="timer.js" defer></script>
+        <script src="view.js" defer></script>
     </head>
     <body>
         <header>
@@ -49,29 +50,17 @@
             </nav>
         </header>
         <main>
-            <div id="main">
-                <img src="logo.jpeg">
-                <h1>Welcome to Malta's National Karate Federation</h1>
-                <p>Pursuing excellence in our events and athletes</p>
-                <a href="apply.html">Register Now to Compete</a>
-            </div>
-            <div id="links">
-                <div>
-                    <h2>Athlete Rankings</h2>
-                    <p>View current rankings across all categories</p><br>
-                    <a href="ranking.html">View Rankings</a>
+            <div id="section">
+                <div id="buttons">
+                    <button onclick="loadDoc('Rules.pdf')">Regulations 2026</button>
+                    <button onclick="loadDoc('Approved.pdf')">Approved Brands</button>
+                    <button onclick="loadDoc('Liability Waiver.pdf')">Safety Form</button>
                 </div>
-                <div>
-                    <h2>Rules and Regulations</h2>
-                    <p>Our regulations and policies</p><br>
-                    <a href="regulations.html">Regulating policies</a>
-                </div>
-                <div>
-                    <h2>Latest News</h2>
-                    <p>Federation announcements and updates</p><br>
-                    <a href="https://karate.com/news">Read News</a>
+                <div id="preview">
+                    <iframe id="viewing" src=""></iframe>
                 </div>
             </div>
+            
         </main>
         <footer>
             <p><strong>National Karate Federation</strong></p>
