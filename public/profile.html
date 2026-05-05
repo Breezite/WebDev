@@ -91,11 +91,11 @@
                 </div>
                 <div id="group">
                     <label for="weight">Weight (kg):</label>
-                    <input type="number" required id="weight">
+                    <input type="number" required id="weight" min="1">
                 </div>
                 <div id="group">
                     <label for="height">Height (m):</label>
-                    <input type="number" required id="height">
+                    <input type="number" required id="height" min="1">
                 </div>
                 <div id="group">
                     <label for="nationality">Nationality:</label>
@@ -109,7 +109,7 @@
                         <option value="Male">Male</option>
                         <option value="Other">Other</option>
                     </select>
-                </div>
+                </div><br>
                 <div id="checkboxGroup">
                     <label for="category">Category:</label>
                     <div id="checkedCat">
@@ -127,7 +127,7 @@
                 <br>
                 <div id="group">
                     <label for="pic">Profile picture:</label>
-                    <input type="file" id="pic" accept="image/*">
+                    <input type="file" required id="pic" accept="image/*">
                     <img id="previewPic">
                 </div>
                 <br>
