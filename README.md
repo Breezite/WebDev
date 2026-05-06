@@ -45,7 +45,7 @@ My github repository can be viewed from the following link
 https://github.com/Breezite/WebDev.git
 
 Personally I've never used github for collaboration or distribution so if any issues arrise feel free to reach out and I will be happy to provide.
-Small issue with github sequence of commits as accidentally branched at a point.
+Small issue with github sequence of commits as accidentally branched at a point and I fear that it created an issue with the commits.
 
 ____________________________________________________________
 Written Reflection
@@ -63,4 +63,20 @@ Initially obtaining the api data, manipulating it and dynamically building the p
 Since athletes can compete in more than one category, this was an issue creating minor complicatoins in the js code. This hurdle was also overcome.
 When including the fighter's image, a slight alteration was needed as the url was being read as undefined, thus storing the image as an object and displaying that instead. (This aspect and the tables css was included towards the end of the project.)
 Furthermore, the ranking.html page was made to allow easy browsing between different categories with the use of the buttons, acting as their own navigation bar so to speak. These are what triggered the script.js file to reload the tables when needed.
+Additionally the rank was then substituted for Titles for the data to make sense. Since in the api, the ranking of fighters per categroy per weight class was not incremental and had duplicates. Logically, an athlete can't be third ranked if there isn't one present at second and two athletes can't be first. Therefore, this work around was implemented for completness sake.
 
+According to the assignment brief, a form was also needed to be incorporated into the website.
+This was done through the apply.html, where the user would submit their details and run the data through the check.js as a means of error handling from the users end, disallowing invalid input.
+
+For Local Storage this was done in the profile html and js files.
+This section was pretty straight forward, implementing local storage in an adequate manner.
+Small obstacles were encountered when saving the check boxes, indicating the category/categories which the athletes might be participating.
+Likewise, had a minor complication when uploading the image, allowing preview before submitting the form and displaying it.
+
+By splitting the project into sections, trying to tackle a theme per day, was a good way to break it down and build it up.
+The css was definitely the easiest part as I had a strong background and found negligible difficulty handling.
+The most challenging was undoubtedly the ranking.html file. Many complexities and had to continously amend its linked script.js for proper implementation. Main issue was in syntax and understanding how to manipulate data as it was a new concept which I tended to not be able to understand why errors and unexpected results were occuring.
+
+If I had more time I would have definitely tried to figure out a way to synch the local storage to the apply.html so that details would be inputted automatically, while of course still giving the client the chance to change the data. Furthermore, I would have continued developing the fixture.html to create fixtures based on athlete titles (ranking) to create usable fixture and possibly even group stages depending on how many athletes per category and weight class. But these features go above and beyond and as the deadline approaches, it becomes less feasible to implement and my focus must shift towards other examinations and studies.
+
+-Julian Mifsud
