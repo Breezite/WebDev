@@ -43,6 +43,26 @@ function filterFighters(selectedCategory) {
     for (const weightClass in grouped) {
         const fighterofClass = grouped[weightClass];
         
+        fighterofClass.sort((a,b)=>{
+            const rankA = parseFloat(a.ranking);
+            const rankB = parseFloat(b.ranking);
+            const RankA = !isNaN(rankA);
+            const RankB = !isNaN(rankB);
+
+            if(RankA && RankB){
+                return parseFloat(b.ranking) - parseFloat(a.ranking)
+            }
+            else if(RankA && !RankB) {
+                return -1;
+            }
+            else if (!RankA && RankB) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+
         const together=document.createElement('div');
         together.id='together';
 
@@ -55,7 +75,7 @@ function filterFighters(selectedCategory) {
             <thead>
                 <tr>
                     <th>Profile</th>
-                    <th>Rank</th>
+                    <th>Titles</th>
                     <th>Name</th>
                     <th>Weight</th>
                 </tr>
